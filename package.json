@@ -1,7 +1,7 @@
 {
   "name": "05-noc",
   "version": "1.0.0",
-  "description": "",
+  "description": "A NOC service made with NodeJS (Typescript) following DDD architecture.",
   "main": "index.js",
   "scripts": {
     "dev": "tsnd --respawn --clear src/app.ts",
