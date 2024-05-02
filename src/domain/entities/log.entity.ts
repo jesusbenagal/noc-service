@@ -26,14 +26,28 @@ export class LogEntity {
     this.origin = origin;
   }
 
-  static readonly fromJson = (json: string): LogEntity => {
-    const { message, level, createdAt } = JSON.parse(json);
+  static readonly fromJson = (json: string = "{}"): LogEntity => {
+    json = json === "" ? "{}" : json;
+    const { message, level, createdAt, origin } = JSON.parse(json);
 
     const log = new LogEntity({
       message,
       level,
       createdAt: createdAt,
-      origin: "log.entity.ts",
+      origin: origin,
+    });
+
+    return log;
+  };
+
+  static readonly fromObject = (object: { [key: string]: any }): LogEntity => {
+    const { message, level, createdAt, origin } = object;
+
+    const log = new LogEntity({
+      message,
+      level,
+      createdAt: new Date(createdAt),
+      origin,
     });
 
     return log;

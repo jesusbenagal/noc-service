@@ -1,6 +1,6 @@
-node_modules
-dist
-logs
+/node_modules
+/dist
+/logs
 .vscode
 .env
-mongo
+/mongo
