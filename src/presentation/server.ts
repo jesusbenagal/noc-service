@@ -1,8 +1,10 @@
 import { CheckServiceMultiple } from "../domain/use-cases/checks/check-service-multiple";
-import { FileSystemDatasource } from "../infrastructure/datasources/file-system.datasource";
-import { MongoLogDatasource } from "../infrastructure/datasources/mongo-log.datasource";
-import { PostgresLogDatasource } from "../infrastructure/datasources/postgres-log.datasource";
-import { LogRepositoryImpl } from "../infrastructure/repositories/log.repository.impl";
+import {
+  FileSystemDatasource,
+  LogRepositoryImpl,
+  MongoLogDatasource,
+  PostgresLogDatasource,
+} from "../infrastructure";
 import { CronService } from "./cron/cron-service";
 import { EmailService } from "./email/email.service";
 
