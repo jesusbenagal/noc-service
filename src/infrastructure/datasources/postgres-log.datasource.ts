@@ -15,12 +15,14 @@ export class PostgresLogDatasource implements LogDatasource {
   async saveLog(log: LogEntity): Promise<void> {
     const level = severityEnum[log.level];
 
-    await prismaClient.logModel.create({
+    const createdLog = await prismaClient.logModel.create({
       data: {
         ...log,
         level,
       },
     });
+
+    console.log("Postgres Log created:", createdLog.id);
   }
   async getLogs(severityLevel: LogSeverityLevel): Promise<LogEntity[]> {
     const level = severityEnum[severityLevel];
